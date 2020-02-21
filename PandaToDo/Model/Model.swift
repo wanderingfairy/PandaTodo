@@ -10,22 +10,17 @@ import Foundation
 import UIKit
 import CoreData
 
-struct Todo {
+struct Todo: Codable {
     var todoTag: Int
     var date: String
     var time: String
     var memo: String
     var color: String
     var setAlarm: Bool
-    
-    func save(){
-        UserDefaults.standard.set(todoTag, forKey: "todoTag")
-        UserDefaults.standard.set(date, forKey: "date")
-        UserDefaults.standard.set(time, forKey: "time")
-        UserDefaults.standard.set(memo, forKey: "memo")
-        UserDefaults.standard.set(color, forKey: "color")
-        UserDefaults.standard.set(setAlarm, forKey: "setAlarm")
-    }
+}
+
+struct TodoList: Codable {
+    var todoList: [Todo]
 }
 
 class Singleton {
