@@ -426,11 +426,28 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                                    memo: todoTextField.text ?? "새로운 할 일",
                                    color: colorName ?? "TableViewCellBasic",
             setAlarm: setAlarm)
-        addedTodo.save()
         
-        Singleton.shared.todoList.append(addedTodo)
+//        Singleton.shared.todoList.append(addedTodo)
+        if UserDefaults.standard.object(forKey: "TodoList") != nil {
+        if var decodedTodoList = try? PropertyListDecoder().decode(TodoList.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
+            decodedTodoList.todoList.append(addedTodo)
+            let encodedTodoList = try! PropertyListEncoder().encode(decodedTodoList)
+            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+            print("Success insert Todo ")
+        } else {
+            let encodedTodoList = try! PropertyListEncoder().encode(TodoList(todoList: [addedTodo]))
+            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+
+            print("fail to insert Todo in UserDefaults")
+        }
+        } else {
+            let encodedTodoList = try! PropertyListEncoder().encode(TodoList(todoList: [addedTodo]))
+            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+
+            print("fail to insert Todo in UserDefaults")
+        }
         
-        
+
         if selectedYear != nil &&
             selectedYear != nil &&
             selectedMonth != nil &&
@@ -442,6 +459,16 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveToUserDefaults() {
+        let todoForSave = Todo(todoTag: 231241, date: "20192929", time: "02020", memo: "292929", color: "basic", setAlarm: true)
+        let encodedTodoList = try! PropertyListEncoder().encode(todoForSave)
+        UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+        
+        if let decodedTodoList = try? PropertyListDecoder().decode(Todo.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
+            print(decodedTodoList.memo)
+        }
     }
     
     @objc func didTapColor(_ sender: UIButton) {

@@ -26,18 +26,22 @@ class MainViewController: UIViewController {
     //MARK: TableView
     let tableView = UITableView()
     
+    var todoListOfUserDefaults: TodoList?
     
     //MARK: AppLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFromUserDefaults()
         view.backgroundColor = UIColor(named: "Color")
+//        didTapAddButton()
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadFromUserDefaults()
         tableView.reloadData()
-        
+       
     }
     
     
@@ -125,16 +129,32 @@ class MainViewController: UIViewController {
         present(addTodoVC, animated: true, completion: nil)
     }
     
+    func loadFromUserDefaults() {
+        if UserDefaults.standard.data(forKey: "TodoList") != nil {
+        if let dataFromUserDefaults = try? PropertyListDecoder().decode(TodoList.self, from: UserDefaults.standard.data(forKey: "TodoList")!) {
+            todoListOfUserDefaults = dataFromUserDefaults
+            print("Load Success")
+        } else {
+            print("Load Fail")
+        }
+    } else {
+    print("there isn't Data")
+    }
+    
+}
 }
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Singleton.shared.todoList.count
+//        return Singleton.shared.todoList.count
+        return (todoListOfUserDefaults?.todoList.count) ?? 0
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
-        cell.configure(todo: Singleton.shared.todoList[indexPath.row])
+//        cell.configure(todo: Singleton.shared.todoList[indexPath.row])
+        cell.configure(todo: (todoListOfUserDefaults?.todoList[indexPath.row])!)
         return cell
     }
     
@@ -146,8 +166,15 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .normal, title: nil) { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             let notificationCenter = UNUserNotificationCenter.current()
-            notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(Singleton.shared.todoList[indexPath.row].todoTag)"])
-            Singleton.shared.todoList.remove(at: indexPath.row)
+//            notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(Singleton.shared.todoList[indexPath.row].todoTag)"])
+//            Singleton.shared.todoList.remove(at: indexPath.row)
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(self.todoListOfUserDefaults?.todoList[indexPath.row].todoTag)"])
+            self.todoListOfUserDefaults?.todoList.remove(at: indexPath.row)
+            
+            let encodedTodoList = try! PropertyListEncoder().encode(self.todoListOfUserDefaults)
+            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+            
+            
             tableView.deleteRows(at: [indexPath], with: .none)
             
             
@@ -159,8 +186,14 @@ extension MainViewController: UITableViewDelegate {
         
         let successAction = UIContextualAction(style: .normal, title: nil) { (ac:UIContextualAction, view:UIView, success:(Bool)->Void) in
             let notificationCenter = UNUserNotificationCenter.current()
-            notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(Singleton.shared.todoList[indexPath.row].todoTag)"])
-            Singleton.shared.todoList.remove(at: indexPath.row)
+//            notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(Singleton.shared.todoList[indexPath.row].todoTag)"])
+//            Singleton.shared.todoList.remove(at: indexPath.row)
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(self.todoListOfUserDefaults?.todoList[indexPath.row].todoTag)"])
+            self.todoListOfUserDefaults?.todoList.remove(at: indexPath.row)
+            
+            let encodedTodoList = try! PropertyListEncoder().encode(self.todoListOfUserDefaults)
+            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+            
             tableView.deleteRows(at: [indexPath], with: .none)
             
             success(true)
