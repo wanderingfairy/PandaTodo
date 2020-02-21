@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E5E4A2FA762EF814023F0DC /* Pods_PandaToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B95D1F73144F7031129DFF /* Pods_PandaToDo.framework */; };
+		15F9AC4423F2C88E007CD25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC4323F2C88E007CD25B /* AppDelegate.swift */; };
+		15F9AC4623F2C88E007CD25B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC4523F2C88E007CD25B /* SceneDelegate.swift */; };
+		15F9AC4823F2C88E007CD25B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC4723F2C88E007CD25B /* MainViewController.swift */; };
+		15F9AC4B23F2C88E007CD25B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F9AC4923F2C88E007CD25B /* Main.storyboard */; };
+		15F9AC4E23F2C88E007CD25B /* PandaToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC4C23F2C88E007CD25B /* PandaToDo.xcdatamodeld */; };
+		15F9AC5023F2C88F007CD25B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15F9AC4F23F2C88F007CD25B /* Assets.xcassets */; };
+		15F9AC5323F2C88F007CD25B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15F9AC5123F2C88F007CD25B /* LaunchScreen.storyboard */; };
+		15F9AC5B23F2C8C8007CD25B /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC5A23F2C8C8007CD25B /* AddTodoViewController.swift */; };
+		15F9AC5F23F2D36B007CD25B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC5E23F2D36B007CD25B /* CustomCell.swift */; };
+		15F9AC6223F2E024007CD25B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC6123F2E024007CD25B /* Model.swift */; };
+		15F9AC6423F324D2007CD25B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9AC6323F324D2007CD25B /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		15986B5A23F96FBD00A1B0AB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		15F9AC4023F2C88E007CD25B /* PandaToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PandaToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15F9AC4323F2C88E007CD25B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		15F9AC4523F2C88E007CD25B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		15F9AC4723F2C88E007CD25B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		15F9AC4A23F2C88E007CD25B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15F9AC4D23F2C88E007CD25B /* PandaToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PandaToDo.xcdatamodel; sourceTree = "<group>"; };
+		15F9AC4F23F2C88F007CD25B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15F9AC5223F2C88F007CD25B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		15F9AC5423F2C88F007CD25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15F9AC5A23F2C8C8007CD25B /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		15F9AC5E23F2D36B007CD25B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		15F9AC6123F2E024007CD25B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		15F9AC6323F324D2007CD25B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2F844DC5D8857E029664A2A3 /* Pods-PandaToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaToDo.debug.xcconfig"; path = "Target Support Files/Pods-PandaToDo/Pods-PandaToDo.debug.xcconfig"; sourceTree = "<group>"; };
+		978A27030FD8121CF7C78E30 /* Pods-PandaToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PandaToDo.release.xcconfig"; path = "Target Support Files/Pods-PandaToDo/Pods-PandaToDo.release.xcconfig"; sourceTree = "<group>"; };
+		B7B95D1F73144F7031129DFF /* Pods_PandaToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PandaToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15F9AC3D23F2C88E007CD25B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E5E4A2FA762EF814023F0DC /* Pods_PandaToDo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15F9AC3723F2C88E007CD25B = {
+			isa = PBXGroup;
+			children = (
+				15F9AC4223F2C88E007CD25B /* PandaToDo */,
+				15F9AC4123F2C88E007CD25B /* Products */,
+				F487F707E0E03F492F8C466C /* Pods */,
+				F41EA9F5294D77AE6A1530AF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		15F9AC4123F2C88E007CD25B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15F9AC4023F2C88E007CD25B /* PandaToDo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15F9AC4223F2C88E007CD25B /* PandaToDo */ = {
+			isa = PBXGroup;
+			children = (
+				15F9AC6023F2E019007CD25B /* Model */,
+				15F9AC5D23F2D352007CD25B /* View */,
+				15F9AC5C23F2C8EF007CD25B /* Controller */,
+				15F9AC6323F324D2007CD25B /* Extensions.swift */,
+				15F9AC4323F2C88E007CD25B /* AppDelegate.swift */,
+				15F9AC4523F2C88E007CD25B /* SceneDelegate.swift */,
+				15F9AC4923F2C88E007CD25B /* Main.storyboard */,
+				15F9AC4F23F2C88F007CD25B /* Assets.xcassets */,
+				15F9AC5123F2C88F007CD25B /* LaunchScreen.storyboard */,
+				15F9AC5423F2C88F007CD25B /* Info.plist */,
+				15F9AC4C23F2C88E007CD25B /* PandaToDo.xcdatamodeld */,
+			);
+			path = PandaToDo;
+			sourceTree = "<group>";
+		};
+		15F9AC5C23F2C8EF007CD25B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15F9AC4723F2C88E007CD25B /* MainViewController.swift */,
+				15F9AC5A23F2C8C8007CD25B /* AddTodoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		15F9AC5D23F2D352007CD25B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15F9AC5E23F2D36B007CD25B /* CustomCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15F9AC6023F2E019007CD25B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15F9AC6123F2E024007CD25B /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F41EA9F5294D77AE6A1530AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B95D1F73144F7031129DFF /* Pods_PandaToDo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F487F707E0E03F492F8C466C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F844DC5D8857E029664A2A3 /* Pods-PandaToDo.debug.xcconfig */,
+				978A27030FD8121CF7C78E30 /* Pods-PandaToDo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15F9AC3F23F2C88E007CD25B /* PandaToDo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15F9AC5723F2C88F007CD25B /* Build configuration list for PBXNativeTarget "PandaToDo" */;
+			buildPhases = (
+				397BCD11005D192ADF28366B /* [CP] Check Pods Manifest.lock */,
+				15F9AC3C23F2C88E007CD25B /* Sources */,
+				15F9AC3D23F2C88E007CD25B /* Frameworks */,
+				15F9AC3E23F2C88E007CD25B /* Resources */,
+				DBD21746ACBE7B5CDD2FCCBE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+				15986B5A23F96FBD00A1B0AB /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = PandaToDo;
+			productName = PandaToDo;
+			productReference = 15F9AC4023F2C88E007CD25B /* PandaToDo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15F9AC3823F2C88E007CD25B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = pandaman;
+				TargetAttributes = {
+					15F9AC3F23F2C88E007CD25B = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 15F9AC3B23F2C88E007CD25B /* Build configuration list for PBXProject "PandaToDo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15F9AC3723F2C88E007CD25B;
+			productRefGroup = 15F9AC4123F2C88E007CD25B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15F9AC3F23F2C88E007CD25B /* PandaToDo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15F9AC3E23F2C88E007CD25B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F9AC5323F2C88F007CD25B /* LaunchScreen.storyboard in Resources */,
+				15F9AC5023F2C88F007CD25B /* Assets.xcassets in Resources */,
+				15F9AC4B23F2C88E007CD25B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		397BCD11005D192ADF28366B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PandaToDo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBD21746ACBE7B5CDD2FCCBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PandaToDo/Pods-PandaToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PandaToDo/Pods-PandaToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PandaToDo/Pods-PandaToDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15F9AC3C23F2C88E007CD25B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15F9AC6223F2E024007CD25B /* Model.swift in Sources */,
+				15F9AC4E23F2C88E007CD25B /* PandaToDo.xcdatamodeld in Sources */,
+				15F9AC5B23F2C8C8007CD25B /* AddTodoViewController.swift in Sources */,
+				15F9AC6423F324D2007CD25B /* Extensions.swift in Sources */,
+				15F9AC4823F2C88E007CD25B /* MainViewController.swift in Sources */,
+				15F9AC4423F2C88E007CD25B /* AppDelegate.swift in Sources */,
+				15F9AC5F23F2D36B007CD25B /* CustomCell.swift in Sources */,
+				15F9AC4623F2C88E007CD25B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		15F9AC4923F2C88E007CD25B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15F9AC4A23F2C88E007CD25B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		15F9AC5123F2C88F007CD25B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15F9AC5223F2C88F007CD25B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15F9AC5523F2C88F007CD25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		15F9AC5623F2C88F007CD25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15F9AC5823F2C88F007CD25B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F844DC5D8857E029664A2A3 /* Pods-PandaToDo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = PandaToDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.iospanda.PandaToDo2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15F9AC5923F2C88F007CD25B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 978A27030FD8121CF7C78E30 /* Pods-PandaToDo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = PandaToDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tistory.iospanda.PandaToDo2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15F9AC3B23F2C88E007CD25B /* Build configuration list for PBXProject "PandaToDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F9AC5523F2C88F007CD25B /* Debug */,
+				15F9AC5623F2C88F007CD25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15F9AC5723F2C88F007CD25B /* Build configuration list for PBXNativeTarget "PandaToDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15F9AC5823F2C88F007CD25B /* Debug */,
+				15F9AC5923F2C88F007CD25B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		15F9AC4C23F2C88E007CD25B /* PandaToDo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				15F9AC4D23F2C88E007CD25B /* PandaToDo.xcdatamodel */,
+			);
+			currentVersion = 15F9AC4D23F2C88E007CD25B /* PandaToDo.xcdatamodel */;
+			path = PandaToDo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 15F9AC3823F2C88E007CD25B /* Project object */;
+}
