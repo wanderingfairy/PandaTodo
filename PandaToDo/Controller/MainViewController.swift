@@ -179,7 +179,7 @@ extension MainViewController: UITableViewDelegate {
             
             
             success(true)
-        }
+    }
         
         deleteAction.backgroundColor = UIColor(named: "Color")
         deleteAction.image = UIImage(named: "DeleteButton")

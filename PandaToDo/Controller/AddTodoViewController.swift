@@ -100,10 +100,10 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         settingTodoImage.frame = settingTodoCell.frame
         settingTodoCell.addSubview(settingTodoImage)
         
-//        settingTodoAlarmButton.setImage(UIImage(named: "ReserveAlarmButton"), for: .normal)
+        //        settingTodoAlarmButton.setImage(UIImage(named: "ReserveAlarmButton"), for: .normal)
         settingTodoAlarmButton.setImage(UIImage(named: "NotReserveAlarmButton-1"), for: .normal)
         settingTodoAlarmButton.imageView?.contentMode = .center
-
+        
         settingTodoAlarmButton.addTarget(self, action: #selector(didTapSettingAlarmButton), for: .touchUpInside)
         settingTodoCell.addSubview(settingTodoAlarmButton)
         
@@ -425,29 +425,29 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                                    time: timeLabel.text ?? "",
                                    memo: todoTextField.text ?? "새로운 할 일",
                                    color: colorName ?? "TableViewCellBasic",
-            setAlarm: setAlarm)
+                                   setAlarm: setAlarm)
         
-//        Singleton.shared.todoList.append(addedTodo)
+        //        Singleton.shared.todoList.append(addedTodo)
         if UserDefaults.standard.object(forKey: "TodoList") != nil {
-        if var decodedTodoList = try? PropertyListDecoder().decode(TodoList.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
-            decodedTodoList.todoList.append(addedTodo)
-            let encodedTodoList = try! PropertyListEncoder().encode(decodedTodoList)
-            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
-            print("Success insert Todo ")
+            if var decodedTodoList = try? PropertyListDecoder().decode(TodoList.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
+                decodedTodoList.todoList.append(addedTodo)
+                let encodedTodoList = try! PropertyListEncoder().encode(decodedTodoList)
+                UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+                print("Success insert Todo ")
+            } else {
+                let encodedTodoList = try! PropertyListEncoder().encode(TodoList(todoList: [addedTodo]))
+                UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+                
+                print("fail to insert Todo in UserDefaults")
+            }
         } else {
             let encodedTodoList = try! PropertyListEncoder().encode(TodoList(todoList: [addedTodo]))
             UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
-
-            print("fail to insert Todo in UserDefaults")
-        }
-        } else {
-            let encodedTodoList = try! PropertyListEncoder().encode(TodoList(todoList: [addedTodo]))
-            UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
-
+            
             print("fail to insert Todo in UserDefaults")
         }
         
-
+        
         if selectedYear != nil &&
             selectedYear != nil &&
             selectedMonth != nil &&
@@ -530,7 +530,7 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         dateFormatter.dateFormat = "MM월 dd일 EEE"
         if dateFormatter.string(from: date).first == "0" {
             var resultDate = dateFormatter.string(from: date)
-           
+            
             resultDate.removeFirst()
             print(resultDate)
             dateLabel.text = resultDate
@@ -605,10 +605,10 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         dateComponents.minute = Int(selectedMinute!)
         
         print(
-        dateComponents.year = Int(selectedYear!),
-        dateComponents.month = Int(selectedMonth!),
-        dateComponents.hour = Int(selectedHour!),
-        dateComponents.minute = Int(selectedMinute!)
+            dateComponents.year = Int(selectedYear!),
+            dateComponents.month = Int(selectedMonth!),
+            dateComponents.hour = Int(selectedHour!),
+            dateComponents.minute = Int(selectedMinute!)
         )
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
