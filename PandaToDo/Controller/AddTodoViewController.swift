@@ -348,9 +348,6 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             $0.width.height.equalToSuperview().multipliedBy(1.2)
         })
         
-        
-        
-        
         timePickerView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
@@ -360,7 +357,7 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             $0.center.equalToSuperview()
             $0.width.height.equalToSuperview().multipliedBy(1.1)
         }
-        //
+        
         timePicker.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview().offset(-40)
@@ -387,11 +384,7 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         timeCancelButton.imageView?.snp.makeConstraints({
             $0.width.height.equalToSuperview().multipliedBy(1.2)
         })
-        
-        
     }
-    
-    
     
     //MARK: Actions
     @objc private func timeChanged() {
@@ -408,16 +401,15 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         selectedMinute = String(timeTxt.dropFirst(3))
     }
     
-    
     func addTargets(_ buttons: [UIButton]) {
         buttons.forEach { $0.addTarget(self, action: #selector(didTapColor(_:)), for: .touchUpInside)
         }
     }
     
     @objc func didTapBackButton() {
-        
         self.dismiss(animated: true, completion: nil)
     }
+    
     @objc func didTapMakeButton() {
         let randomNum = (1...5000).randomElement()
         let addedTodo: Todo = Todo(todoTag: randomNum!,
@@ -427,7 +419,6 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
                                    color: colorName ?? "TableViewCellBasic",
                                    setAlarm: setAlarm)
         
-        //        Singleton.shared.todoList.append(addedTodo)
         if UserDefaults.standard.object(forKey: "TodoList") != nil {
             if var decodedTodoList = try? PropertyListDecoder().decode(TodoList.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
                 decodedTodoList.todoList.append(addedTodo)
@@ -437,7 +428,6 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             } else {
                 let encodedTodoList = try! PropertyListEncoder().encode(TodoList(todoList: [addedTodo]))
                 UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
-                
                 print("fail to insert Todo in UserDefaults")
             }
         } else {
@@ -456,20 +446,18 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             selectedMinute != nil && setAlarm == true {
             scheduleLocal(identifier: randomNum!)
         }
-        
-        
         self.dismiss(animated: true, completion: nil)
     }
     
-    func saveToUserDefaults() {
-        let todoForSave = Todo(todoTag: 231241, date: "20192929", time: "02020", memo: "292929", color: "basic", setAlarm: true)
-        let encodedTodoList = try! PropertyListEncoder().encode(todoForSave)
-        UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
-        
-        if let decodedTodoList = try? PropertyListDecoder().decode(Todo.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
-            print(decodedTodoList.memo)
-        }
-    }
+    //    func saveToUserDefaults() {
+    //        let todoForSave = Todo(todoTag: 231241, date: "20192929", time: "02020", memo: "292929", color: "basic", setAlarm: true)
+    //        let encodedTodoList = try! PropertyListEncoder().encode(todoForSave)
+    //        UserDefaults.standard.set(encodedTodoList, forKey: "TodoList")
+    //
+    //        if let decodedTodoList = try? PropertyListDecoder().decode(Todo.self, from: UserDefaults.standard.object(forKey: "TodoList") as! Data) {
+    //            print(decodedTodoList.memo)
+    //        }
+    //    }
     
     @objc func didTapColor(_ sender: UIButton) {
         switch sender.tag {
@@ -519,7 +507,6 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         timePickerView.isHidden = false
     }
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -530,14 +517,12 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         dateFormatter.dateFormat = "MM월 dd일 EEE"
         if dateFormatter.string(from: date).first == "0" {
             var resultDate = dateFormatter.string(from: date)
-            
             resultDate.removeFirst()
             print(resultDate)
             dateLabel.text = resultDate
         } else {
             dateLabel.text = dateFormatter.string(from: date)
         }
-        
         dateFormatter.dateFormat = "YYYY"
         selectedYear = dateFormatter.string(from: date)
         print(selectedYear!)
@@ -551,6 +536,7 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
         
         
     }
+    
     // 날짜 선택 해제 시 콜백 메소드
     public func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         //            let dateFormatter = DateFormatter()
@@ -569,11 +555,10 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
     //MARK: RegisterLocal
     @objc func registerLocal() {
         let center = UNUserNotificationCenter.current()
-        
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("Yay!")
-            }else{
+            } else {
                 print("D'oh!")
             }
         }
@@ -627,13 +612,7 @@ class AddTodoViewController: UIViewController, FSCalendarDataSource, FSCalendarD
             }
             print("예약완료")
         }
-        
-        
-        
     }
-    
-    
-    
 }
 
 extension AddTodoViewController: UITextFieldDelegate {
@@ -653,12 +632,10 @@ extension AddTodoViewController: UITextFieldDelegate {
         
         if frame.origin.y >= UIScreen.main.bounds.height {
             //내려갔을 때
-            
         }
         
         UIView.animate(withDuration: duration) {
             //content
-            
             self.calendar.isHidden = true
             self.settingTodoCell.transform = .init(translationX: 0, y: -(self.underCalenderView.frame.height))
             self.colorPickButtonGreen.transform = .init(translationX: 0, y: -(self.underCalenderView.frame.height))
@@ -671,7 +648,6 @@ extension AddTodoViewController: UITextFieldDelegate {
             self.colorPickButtonCyan.transform = .init(translationX: 0, y: -(self.underCalenderView.frame.height))
             self.makeTodoButton.transform = .init(translationX: 0, y: -(self.underCalenderView.frame.height))
         }
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
@@ -688,13 +664,8 @@ extension AddTodoViewController: UITextFieldDelegate {
             self.colorPickButtonCyan.transform = .identity
             self.makeTodoButton.transform = .identity
         }
-        
-        
     }
-    
-    
 }
-
 
 extension AddTodoViewController: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
