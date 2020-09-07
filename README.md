@@ -1,5 +1,13 @@
 # PandaTodo
 
-We've been plagued by To do list apps that require too much input. It's so weird to spend more time writing reminders than actually doing it.
+간단한 Todo 앱 입니다.
 
-So I made this. Let's write it down and finish it. Even nothing is registered. If you want to be notified on a specific date and time, you can do so. There are no required inputs, but there are many functions available.
+---
+
+![PandaTodoFourth](https://tva1.sinaimg.cn/large/007S8ZIlgy1giiazb7xgfj315o0ngnc4.jpg)
+
+![PandaTodoFirst](https://tva1.sinaimg.cn/large/007S8ZIlgy1giiazqgr0cj31400u0wsy.jpg)
+
+![PandaTodoSecond](https://tva1.sinaimg.cn/large/007S8ZIlgy1giiazwxngaj31400u0dt7.jpg)
+
+![PandaTodoThird](https://tva1.sinaimg.cn/large/007S8ZIlgy1giib00nfamj31400u01eh.jpg)
